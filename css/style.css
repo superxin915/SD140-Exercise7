@@ -275,3 +275,19 @@ p {
   display: none;
 }
 
+.pagination ul {
+  display: flex;
+}
+
+.pagination ul li {
+  margin: 0 10px;
+  cursor: pointer;
+  text-decoration: underline;
+  color: #dc1a28;
+  font-size: 19px;
+}
+
+.pagination ul .current-page {
+  cursor: default;
+  text-decoration: none;
+}
