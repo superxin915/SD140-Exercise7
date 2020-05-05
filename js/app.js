@@ -77,7 +77,6 @@ function loadContent(movieDetail) {
 function pagination(page) {
   const prevBtn = document.querySelector(`#prev`);
   const nextBtn = document.querySelector(`#next`);
-  let pageStr = ``;
 
   if (page == 1) {
     prevBtn.style.display = `none`;
@@ -89,6 +88,12 @@ function pagination(page) {
     prevBtn.style.display = `inherit`;
     nextBtn.style.display = `inherit`;
   }
+
+  buildPageNumber(page);
+}
+
+function buildPageNumber(page) {
+  let pageStr = ``;
 
   if (page - 5 < 0) {
     for (let x = 1; x <= 10; x++){
@@ -115,5 +120,6 @@ function pagination(page) {
       }
     }
   }
+
   pages.innerHTML = pageStr;
 }
