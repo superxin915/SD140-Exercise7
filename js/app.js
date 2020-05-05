@@ -27,7 +27,9 @@ paginationEle.addEventListener(`click`, event => {
 
 pages.addEventListener(`click`, event => {
   if (event.target.tagName === `LI` && !event.target.classList.contains(`current-page`)) {
-    
+    pageNumber = parseInt(event.target.innerText);
+    getMovieList(inputField.value, pageNumber);
+    pagination(pageNumber);
   }
 })
 
