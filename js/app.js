@@ -1,6 +1,7 @@
 const searchForm = document.querySelector(`#search`);
 const movieList = document.querySelector(`.titles-wrapper`);
 const paginationEle = document.querySelector(`.pagination`);
+const pages = document.querySelector(`.page-number`);
 const inputField = searchForm.querySelector(`input`);
 
 let pageNumber = 1;
@@ -19,6 +20,14 @@ paginationEle.addEventListener(`click`, event => {
     pagination(pageNumber);
   } else if (event.target.id === `next` || event.target.classList.contains(`fa-chevron-right`)){
     pageNumber++;
+    getMovieList(inputField.value, pageNumber);
+    pagination(pageNumber);
+  }
+})
+
+pages.addEventListener(`click`, event => {
+  if (event.target.tagName === `LI` && !event.target.classList.contains(`current-page`)) {
+    pageNumber = parseInt(event.target.innerText);
     getMovieList(inputField.value, pageNumber);
     pagination(pageNumber);
   }
@@ -79,4 +88,38 @@ function pagination(page) {
     prevBtn.style.display = `inherit`;
     nextBtn.style.display = `inherit`;
   }
+
+  buildPageNumber(page);
+}
+
+function buildPageNumber(page) {
+  let pageStr = ``;
+
+  if (page - 5 < 0) {
+    for (let x = 1; x <= 10; x++){
+      if (x === page) {
+        pageStr += `<li class="current-page">${x}</li>`;
+      } else {
+        pageStr += `<li>${x}</li>`;
+      }
+    }
+  } else if (page + 5 > total){
+    for (let x = total - 9; x <= total; x++){
+      if (x === page) {
+        pageStr += `<li class="current-page">${x}</li>`;
+      } else {
+        pageStr += `<li>${x}</li>`;
+      }
+    }
+  } else {
+    for (let x = page - 4; x <= page + 4; x++){
+      if (x === page) {
+        pageStr += `<li class="current-page">${x}</li>`;
+      } else {
+        pageStr += `<li>${x}</li>`;
+      }
+    }
+  }
+
+  pages.innerHTML = pageStr;
 }
