@@ -1,6 +1,6 @@
 const searchForm = document.querySelector(`#search`);
 const movieList = document.querySelector(`.titles-wrapper`);
-let pageNumber;
+let pageNumber = 1;
 
 searchForm.addEventListener(`submit`, event => {
   const inputField = searchForm.querySelector(`input`);
@@ -51,5 +51,17 @@ function loadContent(movieDetail) {
 }
 
 function pagination(page = 1) {
+  const prevBtn = document.querySelector(`#prev`);
+  const nextBtn = document.querySelector(`#next`);
 
+  if (page == 1) {
+    prevBtn.style.display = `none`;
+  } else {
+    prevBtn.style.display = `initial`;
+    if (page == pageNumber) {
+      nextBtn.style.display = `none`;
+    } else {
+      nextBtn.style.display = `initial`;
+    }
+  }
 }
