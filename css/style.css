@@ -272,5 +272,6 @@ p {
   color: #dc1a28;
   font-size: 19px;
   cursor: pointer;
+  display: none;
 }
 
