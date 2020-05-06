@@ -14,11 +14,11 @@ searchForm.addEventListener(`submit`, event => {
 })
 
 paginationEle.addEventListener(`click`, event => {
-  if (event.target.id === `prev` || event.target.classList.contains(`fa-chevron-left`)) {
+  if (event.target.closest(`button`).id === `previous`) {
     pageNumber--;
     getMovieList(inputField.value, pageNumber);
     pagination(pageNumber);
-  } else if (event.target.id === `next` || event.target.classList.contains(`fa-chevron-right`)){
+  } else if (event.target.closest(`button`).id === `next`){
     pageNumber++;
     getMovieList(inputField.value, pageNumber);
     pagination(pageNumber);
