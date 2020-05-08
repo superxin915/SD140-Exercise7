@@ -34,7 +34,7 @@ pages.addEventListener(`click`, event => {
 })
 
 function getMovieList(keyword, page = 1) {
-  fetch(`http://www.omdbapi.com/?s=${keyword}&page=${page}&apikey=36969425`)
+  fetch(`https://www.omdbapi.com/?s=${keyword}&page=${page}&apikey=36969425`)
     .then(data => {
       if (data.ok) {
         return data.json();
@@ -46,7 +46,7 @@ function getMovieList(keyword, page = 1) {
       movieList.innerHTML = ``;
       total = Math.ceil(list.totalResults / 10);
       list.Search.forEach(movie => {
-        fetch(`http://www.omdbapi.com/?i=${movie.imdbID}&apikey=36969425`)
+        fetch(`https://www.omdbapi.com/?i=${movie.imdbID}&apikey=36969425`)
           .then(data => {
             if (data.ok) {
               return data.json();
