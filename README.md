@@ -1,4 +1,4 @@
-#SD140-Exercise7
+# SD140-Exercise7
 ---
 This is the movie search page using OMDB API.
 
