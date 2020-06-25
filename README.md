@@ -1,4 +1,4 @@
-# MITTFLIX_beta
+# MITTFLIX beta v1.0
 
 This is the movie search page using OMDB API.
 
