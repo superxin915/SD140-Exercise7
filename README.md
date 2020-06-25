@@ -1,9 +1,7 @@
-# SD140-Exercise7
----
+# MITTFLIX_beta
+
 This is the movie search page using OMDB API.
 
-The commits for this one are bad.
+You can search movies by keyword in title. 
 
-Here is a link to view it:
-
-https://yuxinli915.github.io/SD140-Exercise7/
+The app will display maximium 100 results.
